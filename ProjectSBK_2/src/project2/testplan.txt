@@ -1,0 +1,76 @@
+PLine Test Plan
+getlength
+Action
+When calling the getlength method, it should return the current size of the list. Wanted results
+Reason
+We want to check the size of the line and see if it goes past the limit.
+Example
+The limit of the line is seven.
+add person 1 person 2 people, 3 people, 4 then it should return 4
+enqueue
+We need to check the limit of the line, especially in the case of 0. Check that the current size is less than the limit.
+Peek Action/Reason
+● The line is empty.
+○ Call the empty method.
+○ Make sure that the return value is null.
+● The line is not empty.
+○ Call the empty method for verification.
+○ Checks the first person in line
+○ Check the time they arrived in the line (it doesn’t matter).
+ ○ Make sure there are no changes to the line. ●
+dequeue(int x)
+● keeps track of the number of people removed from the line.
+● We need to check that x is not a negative number.
+● Check that the number of people in the line is less than x and the size of the line
+is greater than 0.
+● Check when dequeue(x) is less than the number of people in the line, and then it
+will return the number of people removed.
+○ Example: If x is 4, but the size of the list was 3, then it will return 3.
+■ dequeue(4) → 3 is returned because it is the number of people in the line.
+■ Make sure that the length of the line is reduced by 3 and the result of the line is 0.
+○
+● Additional updates
+○ Check when there are enough people to dequeue (remove) from the line.
+■ Add the number of people in the line.
+■ Call dequeue(4); it should remove 4 people from the line, and it has
+to return 4 as the new value.
+■ Make sure that the length of the line is reduced by 4.
+○ ●
+dequeue()
+checks if the list is empty (call the empty method).
+● The line is empty.
+○ Call the empty method.
+○ Return null, and the length of the line is 0.
+● The line is not empty.
+○ Call the empty method.
+○ removes the first person in line.
+○ Make sure that the size of the line is reduced by one.
+○ prints the line to check the status of the line
+empty
+
+ ● Check if the size of the line is 0.
+● return true if the list is empty.
+Event Heap Test Plan
+Add
+Adding 500 events inside the heap
+We need to check that all 500 events can be added to the heaps and that they do not go beyond the capacity.
+We expect all 500 events to be added to the heap.
+Make sure that the size is less than the capacity.
+When we confirm that there is space for the event, we can increase the size by 1.
+Trying to add 501 events to the heap It exceeds the capacity.
+It should be successful because the doublearray method would double the capacity of the heap.
+Remove
+Remove events based on event time.
+Verify the event with the smallest event time returned (minimum heap).
+Check for the last item in the array and move it to the first index (position 0). Make sure that eventheap is updated in proper order.
+Remove an event from an empty heap.
+We check for the case. If there are no events, then return null.
+Peek at an empty heap.
+Check the root to make sure it is a minimum value (with the smallest event time).
+
+Peek at an empty heap.
+Should return null because there are no events in the heap.
+Size
+Checking the size when adding and removing events from the heap It should return the correct size of the heap.
+is empty
+Check that the size is equal to 0. return true if it meets the requirement.
